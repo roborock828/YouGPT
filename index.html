@@ -5,57 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouGPt - Connexion</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0;
+      background: linear-gradient(145deg, #001f3f, #0056b3);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
+      color: #ffffff;
     }
-    .login-container {
-      background: white;
-      padding: 30px;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      text-align: center;
+
+    .container {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
       width: 100%;
       max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
     }
-    h1 {
-      color: #333;
+
+    .container h1 {
+      color: #001f3f;
+      font-size: 26px;
+      margin-bottom: 30px;
     }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
     input[type="email"],
     input[type="password"] {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
     }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #0056b3;
+    }
+
     button {
-      background-color: #007bff;
+      background-color: #0056b3;
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 4px;
+      padding: 12px 15px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
       width: 100%;
+      transition: background 0.3s ease;
     }
+
     button:hover {
-      background-color: #0056b3;
+      background-color: #003d80;
     }
+
+    .footer {
+      margin-top: 15px;
+      color: #333;
+      font-size: 12px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Connexion à YouGPt</h1>
+  <div class="container">
+    <h1>Bienvenue sur YouGPt</h1>
     <form action="dashboard.html" method="post">
-      <input type="email" name="email" placeholder="Adresse email" required><br>
-      <input type="password" name="password" placeholder="Mot de passe" required><br>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Adresse email" required>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" placeholder="Mot de passe" required>
+      </div>
       <button type="submit">Se connecter</button>
     </form>
+    <div class="footer">
+      © 2025 YouGPt - Micropaiement sécurisé
+    </div>
   </div>
 </body>
 </html>
