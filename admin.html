@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - YouGPt</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0056b3;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    main {
+      padding: 30px;
+      flex: 1;
+    }
+
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: calc(33.333% - 20px);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #0056b3;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    .btn {
+      background-color: #0056b3;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #003d80;
+    }
+
+    .footer {
+      background-color: #ddd;
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Tableau de Bord - Admin YouGPt
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <div class="card">
+        <h3>Les codes aujourd’hui</h3>
+        <p>50</p>
+      </div>
+      <div class="card">
+        <h3>Les codes hier</h3>
+        <p>70</p>
+      </div>
+      <div class="card">
+        <h3>Total appels du mois</h3>
+        <p>1,200</p>
+      </div>
+    </section>
+
+    <h2>Gestion des Comptes Clients</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Solde (€)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jean Dupont</td>
+          <td>jean.dupont@email.com</td>
+          <td>150</td>
+          <td><a href="#" class="btn">Modifier</a> <a href="#" class="btn">Supprimer</a></td>
+        </tr>
+        <tr>
+          <td>Marie Curie</td>
+          <td>marie.curie@email.com</td>
+          <td>300</td>
+          <td><a href="#" class="btn">Modifier</a> <a href="#" class="btn">Supprimer</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Créer un Nouveau Compte Client</h2>
+    <form action="#" method="post">
+      <input type="text" name="nom" placeholder="Nom complet" required><br><br>
+      <input type="email" name="email" placeholder="Adresse email" required><br><br>
+      <input type="number" name="solde" placeholder="Solde initial (€)" required><br><br>
+      <button type="submit" class="btn">Créer Compte</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    © 2025 YouGPt - Micropaiement sécurisé
+  </footer>
+</body>
+</html>
