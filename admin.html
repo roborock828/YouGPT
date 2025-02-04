@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin - YouGPt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * {
       margin: 0;
@@ -12,7 +14,7 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #f3f4f6;
       color: #333;
       display: flex;
@@ -48,11 +50,12 @@
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
@@ -139,6 +142,40 @@
       font-size: 14px;
       margin-top: 20px;
     }
+
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .notification {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    .notification h2 {
+      color: #0056b3;
+      margin-bottom: 15px;
+    }
+
+    .notification ul {
+      list-style: none;
+    }
+
+    .notification ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .notification ul li:last-child {
+      border-bottom: none;
+    }
   </style>
 </head>
 <body>
@@ -161,6 +198,10 @@
         <p>1,200</p>
       </div>
     </section>
+
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
 
     <h2>Gestion des Comptes Clients</h2>
     <table>
@@ -195,10 +236,44 @@
       <input type="number" name="solde" placeholder="Solde initial (€)" required>
       <button type="submit" class="btn">Créer Compte</button>
     </form>
+
+    <div class="notification">
+      <h2>Notifications</h2>
+      <ul>
+        <li>Nouvelle demande de retrait de Jean Dupont.</li>
+        <li>Transaction réussie pour Marie Curie.</li>
+      </ul>
+    </div>
   </main>
 
   <footer class="footer">
     © 2025 YouGPt - Micropaiement sécurisé
   </footer>
+
+  <script>
+    // Graphique avec Chart.js
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'],
+        datasets: [{
+          label: 'Transactions mensuelles',
+          data: [1200, 1900, 3000, 2500, 2000, 3000],
+          backgroundColor: 'rgba(0, 86, 179, 0.2)',
+          borderColor: '#0056b3',
+          borderWidth: 2,
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
